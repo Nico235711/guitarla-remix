@@ -127,7 +127,7 @@ main {
 .footer .copyright {
   color: var(--white);
   text-decoration: none;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
   font-weight: 700;
   padding: .5rem;
@@ -135,5 +135,4 @@ main {
 
 .footer .copyright {
   text-align: center;
-  font-size: 1.5rem;
 }
