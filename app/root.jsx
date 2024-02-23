@@ -1,4 +1,4 @@
-import { Links, LiveReload, Meta, Outlet } from "@remix-run/react"
+import { Links, LiveReload, Meta, Outlet, Scripts } from "@remix-run/react"
 import styles from "~/styles/index.css"
 import Header from "~/components/header"
 
@@ -57,7 +57,6 @@ export default function App() {
   return(
     <Document>
       <Outlet />
-      <LiveReload />
     </Document>
   )
 }
@@ -74,6 +73,9 @@ function Document({ children }){
       <body>
         <Header />
         {children}
+
+        <Scripts />
+        <LiveReload />
       </body>
     </html>
   )
