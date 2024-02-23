@@ -1,5 +1,8 @@
-import { LiveReload, Meta } from "@remix-run/react"
+import { Links, LiveReload, Meta, Outlet } from "@remix-run/react"
+import styles from "~/styles/index.css"
+import Header from "~/components/header"
 
+// agrego metas
 export function meta() {
 
   return(
@@ -18,12 +21,42 @@ export function meta() {
   )
 }
 
+// agrego hojas de estilos
+export function links() {
+
+  return(
+    [
+      // reset
+      {
+        rel: "stylesheet",
+        href: "https://necolas.github.io/normalize.css/8.0.1/normalize.css"
+      },
+      {
+        rel: "preconnect",
+        href: "https://fonts.googleapis.com"
+      },
+      {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossOrigin: "true"
+      },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      },
+      {
+        rel: "stylesheet",
+        href: styles
+      }
+    ]
+  )
+}
+
 export default function App() {
 
   return(
     <Document>
-      <h1>Soy HDP Remix</h1>
-      <h1>Soy HDP Remix</h1>
+      <Outlet />
       <LiveReload />
     </Document>
   )
@@ -35,9 +68,11 @@ function Document({ children }){
     <html lang="es">
       <head>
         <Meta />
+        <Links />
       </head>
 
       <body>
+        <Header />
         {children}
       </body>
     </html>
