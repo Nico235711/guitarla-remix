@@ -10,7 +10,7 @@ export function meta() {
   if (error?.status === 404) {
     return ([
       { title: `GuitarLA - Error 404` },
-      { description: `Guitarra no encontrada` },
+      { description: `${error.statusText}` },
       { charset: "utf-8" },
       { viewport: "width=device-width,initial-scale=1.0" }
     ])
@@ -100,7 +100,7 @@ export function ErrorBoundary() {
     return (
       <Document>
         <p className="error">{error.statusText}</p>
-        <Link className="error-enlace">Volver a la página principal</Link>
+        <Link className="error-enlace" to="/index">Volver a la página principal</Link>
       </Document>
     )
   }

@@ -17,16 +17,6 @@ export async function loader({ params }) {
 
 export function meta({ data }) {
   
-  if (!data) {
-    return(
-      [
-        { charset: "utf-8" },
-        { title: `GuitarLA - Guitarra no Encontrada` },
-        { viewport: "width=device-width,initial-scale=1.0" },
-        { descripcion: `Guitarras, venta de guitarras, guitarra no encontrada` }
-      ]
-    )
-  }
   return(
     [
       { charset: "utf-8" },
