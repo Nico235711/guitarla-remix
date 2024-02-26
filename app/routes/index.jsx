@@ -2,7 +2,7 @@
 const Index = () => {
 
   return (
-    <div>desde index.jsx</div>
+    <div className="bienvenida">Bienvenido a nuestra tienda de guitarras</div>
   )
 }
 

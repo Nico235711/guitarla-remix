@@ -41,6 +41,14 @@ main {
   margin: 5rem 0;
 }
 
+.bienvenida {
+  text-align: center;
+  margin-top: 5rem;
+  font-size: 6rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
 /* header */
 .header {
   background-image: linear-gradient(to right, rgb(0 0 0 / .8), rgb(0 0 0 /.7)), url(/img/header.jpg);
