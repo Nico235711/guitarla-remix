@@ -1,4 +1,4 @@
-import { Links, LiveReload, Meta, Outlet, Scripts } from "@remix-run/react"
+import { Link, Links, LiveReload, Meta, Outlet, Scripts, isRouteErrorResponse, useRouteError } from "@remix-run/react"
 import styles from "~/styles/index.css"
 import Header from "~/components/header"
 import Footer from "~/components/footer"
@@ -6,7 +6,17 @@ import Footer from "~/components/footer"
 // agrego metas
 export function meta() {
 
-  return(
+  const error = useRouteError();
+  if (error?.status === 404) {
+    return ([
+      { title: `GuitarLA - Error 404` },
+      { description: `Guitarra no encontrada` },
+      { charset: "utf-8" },
+      { viewport: "width=device-width,initial-scale=1.0" }
+    ])
+  }
+
+  return (
     [
       // sintaxis correcta para poner información meta
       { charset: "utf-8" },
@@ -25,7 +35,7 @@ export function meta() {
 // agrego hojas de estilos
 export function links() {
 
-  return(
+  return (
     [
       // reset
       {
@@ -55,16 +65,16 @@ export function links() {
 
 export default function App() {
 
-  return(
+  return (
     <Document>
       <Outlet />
     </Document>
   )
 }
 
-function Document({ children }){
+function Document({ children }) {
 
-  return(
+  return (
     <html lang="es">
       <head>
         <Meta />
@@ -81,4 +91,17 @@ function Document({ children }){
       </body>
     </html>
   )
+}
+
+// manejo de errores
+export function ErrorBoundary() {
+  const error = useRouteError()
+  if (isRouteErrorResponse(error)) {
+    return (
+      <Document>
+        <p className="error">{error.statusText}</p>
+        <Link className="error-enlace">Volver a la página principal</Link>
+      </Document>
+    )
+  }
 }
