@@ -1,0 +1,41 @@
+.blog {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+}
+
+@media(min-width: 768px) {
+  .blog {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media(min-width: 992px) {
+  .blog {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.post .contenido {
+  padding: 1.5rem;
+}
+
+.post .contenido h3 {
+  color: var(--primary);
+  font-size: 3rem;
+  font-weight: 900;
+  margin: 0;
+  height: 9rem;
+}
+
+.post .fecha {
+  font-weight: 900;
+}
+
+.post .resumen {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 10;
+  overflow: hidden;
+  font-size: 1.8rem;
+}
