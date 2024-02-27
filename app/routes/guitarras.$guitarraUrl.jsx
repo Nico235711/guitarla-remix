@@ -1,4 +1,5 @@
 import { useLoaderData } from "@remix-run/react"
+import { useState } from "react"
 import { getGuitarra } from "~/models/guitarras.server"
 
 export async function loader({ params }) {
@@ -28,6 +29,7 @@ export function meta({ data }) {
 
 const Guitarra = () => {
   
+  const [cantidad, setCantidad] = useState(0)
   const guitarra = useLoaderData()
   const { nombre, descripcion, imagen, precio } = guitarra.data[0].attributes
 
@@ -42,7 +44,7 @@ const Guitarra = () => {
 
         <form className="formulario">
           <label htmlFor="cantidad">Cantidad:</label>
-          <select id="cantidad">
+          <select id="cantidad" onChange={e => setCantidad(Number(e.target.value))}>
             <option value="">-- Seleccione --</option>
             <option value="1">1</option>
             <option value="2">2</option>
