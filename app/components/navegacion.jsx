@@ -7,8 +7,8 @@ const Navegacion = () => {
   return (
     <nav className="navegacion">
       <Link 
-        to="/index"
-        className={location.pathname === "/index" ? "active" : ""}
+        to="/"
+        className={location.pathname === "/" ? "active" : ""}
       >Inicio</Link>
       <Link 
         to="/nosotros"

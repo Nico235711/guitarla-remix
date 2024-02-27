@@ -100,7 +100,7 @@ export function ErrorBoundary() {
     return (
       <Document>
         <p className="error">{error.statusText}</p>
-        <Link className="error-enlace" to="/index">Volver a la página principal</Link>
+        <Link className="error-enlace" to="/">Volver a la página principal</Link>
       </Document>
     )
   }

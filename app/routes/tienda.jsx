@@ -38,7 +38,7 @@ const Tienda = () => {
   const guitarras = useLoaderData()
 
   return (
-    <main className="conntenedor">
+    <main className="contenedor">
       <h2 className="heading">Nuestra Colección</h2>
 
       <ListadoGuitarras 
