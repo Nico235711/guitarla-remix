@@ -15,18 +15,6 @@ export function meta() {
   )
 }
 
-export function links() {
-
-  return(
-    [
-      {
-        rel: "stylesheet",
-        href: styles
-      }
-    ]
-  )
-}
-
 export async function loader() {
 
   const guitarras = await getGuitarras()
@@ -38,13 +26,9 @@ const Tienda = () => {
   const guitarras = useLoaderData()
 
   return (
-    <main className="contenedor">
-      <h2 className="heading">Nuestra Colección</h2>
-
-      <ListadoGuitarras 
-        guitarras={guitarras}
-      />
-    </main>
+    <ListadoGuitarras 
+      guitarras={guitarras}
+    />
   )
 }
 
