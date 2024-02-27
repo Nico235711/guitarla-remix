@@ -50,3 +50,34 @@
   font-weight: 900;
 }
 
+.formulario {
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario label {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.formulario select {
+  margin-bottom: 2rem;
+  text-align: center;
+  padding: 1rem;
+  outline: none;
+  border-radius: 1rem;
+}
+
+.formulario button {
+  background-color: var(--black);
+  color: var(--white);
+  cursor: pointer;
+  border: none;
+  padding: 1rem;
+  border-radius: .5rem;
+  transition: all .5s;
+}
+
+.formulario button:hover {
+  background-color: var(--primary);
+}
