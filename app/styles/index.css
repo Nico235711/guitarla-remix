@@ -99,6 +99,10 @@ main {
   transition: all .5s;
 }
 
+.header img {
+  width: 3rem;
+}
+
 .header .navegacion a:hover,
 .header .active {
   background-color: var(--primary);
@@ -139,6 +143,10 @@ main {
   text-transform: uppercase;
   font-weight: 700;
   padding: .5rem;
+}
+
+.footer .navegacion a:last-of-type {
+  display: none;
 }
 
 .footer .copyright {
