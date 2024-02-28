@@ -66,12 +66,13 @@ export function links() {
 
 export default function App() {
 
-  // const carritoLS = localStorage.getItem("carrito") ? JSON.parse(localStorage.getItem("carrito")) : []
-  const [carrito, setCarrito] = useState([])
+const carritoLS = typeof window !== "undefined" ? JSON.parse(localStorage.getItem("carrito")) ?? [] : null
+  console.log(carritoLS);
+  const [carrito, setCarrito] = useState(carritoLS)
 
-  // useEffect(() => {
-  //   localStorage.setItem("carrito", JSON.stringify(carrito))
-  // }, [carrito]);
+  useEffect(() => {
+    localStorage.setItem("carrito", JSON.stringify(carrito))
+  }, [carrito]);
 
   const agregarCarrito = guitarra => { 
     // .some => alguno cumple
