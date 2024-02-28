@@ -1,6 +1,7 @@
 .contenido {
   display: grid;
   gap: 5rem;
+  align-items: flex-start;
 }
 
 @media(min-width: 768px) {
@@ -16,5 +17,44 @@
 .resumen {
   background-color: #f5f6f7;
   padding: 3rem;
-  border-radius: 1rem
+  border-radius: 1rem;
+  position: sticky;
+  top: 3rem;
+  right: 3rem;
+}
+
+.producto {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 4rem;
+  align-items: center;
+  padding: 3rem 0;
+  border-bottom: 1px solid #cfcfcf;
+}
+
+.producto p {
+  margin: 0 0 1rem;
+}
+
+.producto span {
+  font-weight: 900;
+}
+
+.producto:last-of-type {
+  border-bottom: none;
+}
+
+.nombre {
+  font-weight: 700;
+  font-size: 2.8rem;
+}
+
+.precio {
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 2.4rem;
+}
+
+.subtotal {
+  font-size: 2.2rem;
 }

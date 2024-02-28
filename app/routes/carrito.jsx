@@ -39,6 +39,7 @@ const Carrito = () => {
 
                   <div>
                     <p className="nombre">{producto.nombre}</p>
+                    <p className="cantidad">Cantidad: {producto.cantidad}</p>
                     <p className="precio">$<span>{producto.precio}</span></p>
                     <p className="subtotal">SubTotal: $<span>{producto.precio * producto.cantidad}</span></p>
                   </div>
