@@ -43,7 +43,10 @@ const Guitarra = () => {
 
     const guitarraSeleccionada = {
       id: guitarra.data[0].id,
-      imagen : imagen.data.attributes.formats.small.url
+      imagen : imagen.data.attributes.formats.small.url,
+      nombre,
+      precio, 
+      cantidad
     }
 
     console.log(guitarraSeleccionada);
