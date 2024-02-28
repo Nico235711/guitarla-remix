@@ -49,6 +49,17 @@
   font-size: 2.8rem;
 }
 
+.select {
+  all: unset; /* elimino todo el CSS */
+  border: 1px solid #cfcfcf;
+  padding: 1rem;
+  display: block;
+  text-align: center;
+  width: 50%;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+
 .precio {
   color: var(--primary);
   font-weight: 800;
