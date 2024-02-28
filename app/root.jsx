@@ -1,8 +1,8 @@
-import { Link, Links, LiveReload, Meta, Outlet, Scripts, isRouteErrorResponse, useRouteError } from "@remix-run/react"
+import { Link, Links, LiveReload, Meta, Outlet, Scripts, isRouteErrorResponse, json, useRouteError } from "@remix-run/react"
 import styles from "~/styles/index.css"
 import Header from "~/components/header"
 import Footer from "~/components/footer"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // agrego metas
 export function meta() {
@@ -66,7 +66,13 @@ export function links() {
 
 export default function App() {
 
+  // const carritoLS = localStorage.getItem("carrito") ? JSON.parse(localStorage.getItem("carrito")) : []
   const [carrito, setCarrito] = useState([])
+
+  // useEffect(() => {
+  //   localStorage.setItem("carrito", JSON.stringify(carrito))
+  // }, [carrito]);
+
   const agregarCarrito = guitarra => { 
     // .some => alguno cumple
     if (carrito.some(guitarraState => guitarraState.id === guitarra.id)) {
@@ -100,13 +106,21 @@ export default function App() {
     setCarrito(carritoActualizado)
   }
 
+  const eliminarProducto = id => {
+    const carritoActualizado = carrito.filter(guitarraFilter => (
+      guitarraFilter.id !== id
+    ))
+    setCarrito(carritoActualizado)
+  }
+
   return (
     <Document>
       <Outlet 
         context={{
           agregarCarrito,
           carrito,
-          actualizarCantidad
+          actualizarCantidad,
+          eliminarProducto
         }}
       />
     </Document>
